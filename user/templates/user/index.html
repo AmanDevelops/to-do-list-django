@@ -1,27 +1,43 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <link rel="stylesheet" href="{% static 'style.css'%}"">
 </head>
+
 <body>
 
-    <div id="component">
-        <div id="input">
-            <form action="">
-                <input type="text" name="text" id="item">
-                <input type="button" value="submit">
+    <div class="main-component">
+        <form action="" method="POST">
+            {% csrf_token%}
+            <div class="input-component">
+                <div>
+                    <input type="text" name="todo" id="todo" placeholder="Add Your Tasks" class="to-do-input">
+                </div>
+                <div>
+
+                    <input type="submit" value="" class="submit-button" style="background-image: url({% static 'plus.png'%}); ">
+                </div>
+            </div>
+        </form>
+        {% for i in data %}
+        <div class="content">
+            <div class="to-do-list">
+                <form action="" method="POST" id="{{i.id}}">
+            {% csrf_token %}
+                <input type="checkbox" onchange="document.getElementById('{{i.id}}').submit()" id="to-do-item" {% if i.status %}checked{% endif %}>{% if i.status %}<strike>{{i.task}}</strike>{% else %}{{i.task}}{% endif %}
+                <input type="input" style="display: none;" name="id" value="{{i.id}}">
+                <input type="input" style="display: none;" name="isChecked" value="{{i.status}}">
             </form>
+            </div>
         </div>
-        <div id="content">
-            <div>
-                <input type="checkbox" name="item" id="id" style="transform: scale(3);"> Item 1
-            </div>   
-        </div>
-        </div>
+        {% endfor%}
     </div>
 </body>
+
 </html>

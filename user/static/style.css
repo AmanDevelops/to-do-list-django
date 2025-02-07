@@ -1,30 +1,129 @@
-body{
-    font-family:Georgia, 'Times New Roman', Times, serif;
+/* Add this at the top of your CSS */
+* {
+    box-sizing: border-box;
 }
 
-#component {
-    font-size: 3rem;
+body {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    font-family: 'Roboto', Arial, sans-serif; /* Modern and clean font */
+    color: #333; /* Dark grey text for better readability */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-
-#input input{
-    font-size: 2rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#input{
-    text-align: center;
-}
-
-#content{
-    padding-left: 1%;
-    background-color: rgb(189, 187, 187);
-    max-width: 40%;
-    margin-left: auto;
-    margin-right: auto;
+.content {
+    max-width: 80%;
+    background-color: #ff8560;
+    margin: 1.5% auto;
     border-radius: 10px;
-    margin-top: 1%;
-    padding-bottom: 10px;
-    /* align-content: center;
-    display: block; */
+    padding: 0.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease-in-out;
 }
 
+.content:hover {
+    transform: scale(1.05);
+}
+
+.submit-button {
+    background-image: url('plus.png');
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    background-size: cover;
+    border-style: none;
+    transition: transform 100ms ease-in-out;
+    box-shadow: 0 5px 10px -8px rgba(0, 0, 0, .7);
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+.submit-button:hover {
+    transform: translateY(-4px);
+}
+
+.to-do-input {
+    height: 3rem;
+    font-size: 2rem;
+    padding: 0.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 5px solid white;
+    border-radius: 5px;
+    width: calc(100% - 6rem);
+    margin-bottom: 1rem;
+}
+
+.to-do-input:focus {
+    border: 5px solid #68b4ff;
+    outline: none;
+    box-shadow: 0px 0px 3px 0px #68b4ff;
+}
+
+.to-do-list {
+    scale: 1;
+    overflow: hidden;
+}
+
+.main-component {
+    max-width: 50%;
+    margin: auto;
+    background-color: rgba(255, 255, 0, 0.8);
+    border-radius: 30px;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.input-component {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-component > div {
+    margin-right: 1rem;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+input[type="checkbox"] {
+    width: 30px;
+    height: 30px;
+}
+
+.content {
+    font-size: 1.2rem;
+}
+
+.to-do-input {
+    font-size: 2rem;
+}
+
+.to-do-list {
+    font-size: 1.5rem;
+}
+
+.main-component {
+    font-size: 1.2rem;
+}
+
+.submit-button {
+    font-size: 1rem;
+}
+
+/* Additional styles for other elements */
+button, input, textarea {
+    font-family: 'Roboto', Arial, sans-serif;
+}
